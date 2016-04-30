@@ -204,7 +204,7 @@ plot(g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-graph.PNG)
 
-1ai. The player with the highest betweenness centrality
+2ai. The player with the highest betweenness centrality
 
 ```{r}
 #Betweenness
@@ -234,7 +234,7 @@ head(betweenness)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-betweenes.PNG)
 
-1aii. The player with the highest closeness centrality
+2aii. The player with the highest closeness centrality
 
 ```{r}
 #Closeness
@@ -263,7 +263,7 @@ head(closeness)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-closennes.PNG)
 
-1aiii. The player with the highest eigenvector centrality
+2aiii. The player with the highest eigenvector centrality
 
 ```{r}
 #Eigenvector
@@ -293,7 +293,7 @@ head(eigenvector)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-eigenvector.PNG)
 
-1b. First Algorithm is Walktrap community finding algorithm
+2b. First Algorithm is Walktrap community finding algorithm
 
 ```{r}
 algorithm(wc)
@@ -301,7 +301,7 @@ algorithm(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-walk.PNG)
 
-1bi.
+2bi.
 
 ```{r}
 #Walktrap community finding algorithm
@@ -311,7 +311,7 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-walktrap.PNG)
 
-1bii. There are 6 communities at the following size:
+2bii. There are 6 communities at the following size:
 
 ```{r}
 groups(wc)
@@ -319,7 +319,7 @@ groups(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-groups-walk.PNG)
 
-1biii. Modularity value:
+2biii. Modularity value:
 
 ```{r}
 modularity(wc)
@@ -327,7 +327,7 @@ modularity(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-mod-walk.PNG)
 
-1b. Second Algorithm is leading eigenvector algorithm
+2b. Second Algorithm is leading eigenvector algorithm
 
 ```{r}
 algorithm(wc)
@@ -335,7 +335,7 @@ algorithm(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-lead.PNG)
 
-1bi.
+2bi.
 
 ```{r}
 #leading eigenvector algorithm
@@ -347,7 +347,7 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-leadingeigenvector.PNG)
 
-1bii. There are 6 communities at the following size:
+2bii. There are 6 communities at the following size:
 
 ```{r}
 groups(wc)
@@ -355,7 +355,7 @@ groups(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-groups-lead.PNG)
 
-1biii. Modularity value:
+2biii. Modularity value:
 
 ```{r}
 modularity(wc)
