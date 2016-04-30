@@ -4,6 +4,9 @@ author: "Tomer Belzer & Tomer Segal"
 date: "April 30, 2016"   
 output: html_document
 ---
+#First Network
+##Description:
+The network represents Relationship between Characters on the show Grey's Anatomy, Pink dot is a female and blue dot is in male
 ```{r}
 ga.data <- read.csv('ga_edgelist.csv', header=TRUE, stringsAsFactors=FALSE)
 ga.vrtx <- read.csv('ga_actors.csv', header=TRUE, stringsAsFactors=FALSE)
@@ -24,6 +27,8 @@ g$layout <- layout.kamada.kawai(g)
 plot(g)
 ```
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-graph.PNG)
+
+1ai. The character with the highest betweenness centrality
 
 ```{r}
 #Betweenness
@@ -49,6 +54,8 @@ head(betweenness)
 ```
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-betweenes.PNG)
 
+1aii. The character with the highest closeness centrality
+
 ```{r}
 #Closeness
 V(g)$label <- closeness(g)
@@ -72,6 +79,8 @@ head(closeness)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-closennes.PNG)
+
+1aiii. The character with the highest eigenvector centrality
 
 ```{r}
 #Eigenvector
@@ -98,6 +107,16 @@ head(eigenvector)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-eigenvector.PNG)
 
+1b. First Algorithm is Walktrap community finding algorithm
+
+```{r}
+algorithm(wc)
+```
+
+![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-alg-walk.PNG)
+
+1bi.
+
 ```{r}
 #Walktrap community finding algorithm
 wc <- cluster_walktrap(g)
@@ -106,11 +125,7 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-walktrap.PNG)
 
-```{r}
-algorithm(wc)
-```
-
-![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-alg-walk.PNG)
+1bii. There are 7 communities at the following size:
 
 ```{r}
 groups(wc)
@@ -118,11 +133,23 @@ groups(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-groups-walk.PNG)
 
+1biii. Modularity value:
+
 ```{r}
 modularity(wc)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-mod-walk.PNG)
+
+1b. Second Algorithm is leading eigenvector algorithm
+
+```{r}
+algorithm(wc)
+```
+
+![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-alg-lead.PNG)
+
+1bi.
 
 ```{r}
 #leading eigenvector algorithm
@@ -134,17 +161,15 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-leading eigenvector.PNG)
 
-```{r}
-algorithm(wc)
-```
-
-![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-alg-lead.PNG)
+1bii. There are 6 communities at the following size:
 
 ```{r}
 groups(wc)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-groups-lead.PNG)
+
+1biii. Modularity value:
 
 ```{r}
 modularity(wc)
@@ -153,6 +178,10 @@ modularity(wc)
 ![](https://github.com/tomerse/Ass3/blob/master/images/anatomy-mod-lead.PNG)
 
 ======
+
+#Second Network
+##Description:
+The following network represents the relationship between Israeli basketball teams and basketball players. If there's an edge between a team in and player it means that the player used to play in that team or is still playing. A pink dot is a team and a blue dot is a player
 
 ```{r}
 ga.data <- read.csv('~/R_workshop/ga/tp-edges.csv', header=TRUE, stringsAsFactors=FALSE)
@@ -174,6 +203,8 @@ plot(g)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-graph.PNG)
+
+1ai. The player with the highest betweenness centrality
 
 ```{r}
 #Betweenness
@@ -203,6 +234,8 @@ head(betweenness)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-betweenes.PNG)
 
+1aii. The player with the highest closeness centrality
+
 ```{r}
 #Closeness
 V(g)$label <- closeness(g)
@@ -229,6 +262,8 @@ head(closeness)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-closennes.PNG)
+
+1aiii. The player with the highest eigenvector centrality
 
 ```{r}
 #Eigenvector
@@ -258,6 +293,16 @@ head(eigenvector)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-eigenvector.PNG)
 
+1b. First Algorithm is Walktrap community finding algorithm
+
+```{r}
+algorithm(wc)
+```
+
+![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-walk.PNG)
+
+1bi.
+
 ```{r}
 #Walktrap community finding algorithm
 wc <- cluster_walktrap(g)
@@ -266,11 +311,7 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-walktrap.PNG)
 
-```{r}
-algorithm(wc)
-```
-
-![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-walk.PNG)
+1bii. There are 6 communities at the following size:
 
 ```{r}
 groups(wc)
@@ -278,11 +319,23 @@ groups(wc)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-groups-walk.PNG)
 
+1biii. Modularity value:
+
 ```{r}
 modularity(wc)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-mod-walk.PNG)
+
+1b. Second Algorithm is leading eigenvector algorithm
+
+```{r}
+algorithm(wc)
+```
+
+![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-lead.PNG)
+
+1bi.
 
 ```{r}
 #leading eigenvector algorithm
@@ -294,17 +347,15 @@ plot(wc, g)
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-leadingeigenvector.PNG)
 
-```{r}
-algorithm(wc)
-```
-
-![](https://github.com/tomerse/Ass3/blob/master/images/team-alg-lead.PNG)
+1bii. There are 6 communities at the following size:
 
 ```{r}
 groups(wc)
 ```
 
 ![](https://github.com/tomerse/Ass3/blob/master/images/team-groups-lead.PNG)
+
+1biii. Modularity value:
 
 ```{r}
 modularity(wc)
