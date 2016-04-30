@@ -7,15 +7,6 @@ g <- graph.data.frame(ga.data, vertices=ga.vrtx, directed=FALSE)
 g$layout <- layout.fruchterman.reingold(g)
 
 #Betweenness
-betweenness(g, v=V(g), directed = FALSE, weights = NULL,
-            nobigint = TRUE, normalized = FALSE)
-edge.betweenness(g, e=E(g), directed = FALSE, weights = NULL)
-betweenness.estimate(g, vids = V(g), directed = FALSE, cutoff = 0,
-                     weights = NULL, nobigint = TRUE)
-edge.betweenness.estimate(g, e=E(g),
-                          directed = FALSE, cutoff = 0, weights = NULL)
-
-
 V(g)$label <- betweenness(g)
 
 len <- length(V(g))
@@ -38,12 +29,6 @@ head(betweenness)
 
 
 #Closeness
-closeness(g, vids = V(g), mode = c("out", "in", "all", "total"),
-          weights = NULL, normalized = FALSE)
-
-estimate_closeness(g, vids = V(g), mode = c("out", "in", "all",
-                                            "total"), cutoff = 0, weights = NULL, normalized = FALSE)
-
 V(g)$label <- closeness(g)
 
 closeness <- data.frame(name = letters[1:len], 
