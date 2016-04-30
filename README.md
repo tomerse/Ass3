@@ -181,7 +181,7 @@ modularity(wc)
 
 #Second Network
 ##Description:
-The following network represents the relationship between Israeli basketball teams and basketball players. If there's an edge between a team in and player it means that the player used to play in that team or is still playing. A pink dot is a team and a blue dot is a player
+The following network represents the relationship between Israeli basketball teams and basketball players. If there's an edge between a team and a player it means that the player used to play in that team or is still playing. A pink dot is a team and a blue dot is a player
 
 ```{r}
 ga.data <- read.csv('~/R_workshop/ga/tp-edges.csv', header=TRUE, stringsAsFactors=FALSE)
