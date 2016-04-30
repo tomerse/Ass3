@@ -10,21 +10,12 @@ g <- graph.data.frame(ga.data, vertices=ga.vrtx, directed=FALSE)
 g$layout <- layout.fruchterman.reingold(g)
 
 #Betweenness
-betweenness(g, v=V(g), directed = FALSE, weights = NULL,
-            nobigint = TRUE, normalized = FALSE)
-edge.betweenness(g, e=E(g), directed = FALSE, weights = NULL)
-betweenness.estimate(g, vids = V(g), directed = FALSE, cutoff = 0,
-                     weights = NULL, nobigint = TRUE)
-edge.betweenness.estimate(g, e=E(g),
-                          directed = FALSE, cutoff = 0, weights = NULL)
-
-
 V(g)$label <- betweenness(g)
 
 len <- length(V(g))
 
 betweenness <- data.frame(name = letters[1:len], 
-                  between = 1:len, stringsAsFactors = FALSE)
+                          between = 1:len, stringsAsFactors = FALSE)
 
 
 for(i in 1:len)
@@ -44,12 +35,6 @@ betweenness <- sortByField(betweenness, "between")
 head(betweenness)
 
 #Closeness
-closeness(g, vids = V(g), mode = c("out", "in", "all", "total"),
-          weights = NULL, normalized = FALSE)
-
-estimate_closeness(g, vids = V(g), mode = c("out", "in", "all",
-                                            "total"), cutoff = 0, weights = NULL, normalized = FALSE)
-
 V(g)$label <- closeness(g)
 
 closeness <- data.frame(name = letters[1:len], 
@@ -94,7 +79,7 @@ eigenvector <- sortByField(eigenvector, "eigenvector")
 
 head(eigenvector)
 
-# Color nodes by gender.
+# Color nodes by team/player
 V(g)$size <- 7 # Set size to all nodes
 V(g)$color <- "powderblue"
 teams <- which(V(g)$team == "TRUE")
