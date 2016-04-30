@@ -6,7 +6,7 @@ output: html_document
 ---
 #First Network
 ##Description:
-The network represents Relationship between Characters on the show Grey's Anatomy, Pink dot is a female and blue dot is in male
+The network represents Relationship between Characters on the show Grey's Anatomy, Pink dot is a female and blue dot is a male
 ```{r}
 ga.data <- read.csv('ga_edgelist.csv', header=TRUE, stringsAsFactors=FALSE)
 ga.vrtx <- read.csv('ga_actors.csv', header=TRUE, stringsAsFactors=FALSE)
